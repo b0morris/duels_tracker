@@ -129,7 +129,7 @@ async def untrack(interaction: discord.Interaction, username: str):
 async def winstreak(interaction: discord.Interaction, mode:Literal["overall", "classic", "potion", "combo", "sumo", "bridge", "uhc", "sw", "blitz", "mw", "boxing", "op"], username: str, streak: int):
     uuid = get_uuid_for_username(username)
     stats[mode][uuid]["wins"] = stats[mode][uuid]["last_win"] - streak
-    await interaction.response.send_message(f"Updated {mode} streak for {username} to {streak}.")
+    await interaction.response.send_message(f"Updated {mode} streak for {username} to **{streak}**.")
 
 @client.event
 async def on_ready():
